@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameStartFragment">
+
+    <fragment
+        android:id="@+id/gameStartFragment"
+        android:name="com.example.myapplication.GameStartFragment"
+        android:label="fragment_game_start"
+        tools:layout="@layout/fragment_game_start">
+        <action
+            android:id="@+id/action_gameStartFragment_to_gameWinFragment"
+            app:destination="@id/gameWinFragment" />
+        <action
+            android:id="@+id/action_gameStartFragment_to_gameLoseFragment"
+            app:destination="@id/gameLoseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWinFragment"
+        android:name="com.example.myapplication.GameWinFragment"
+        android:label="fragment_game_win"
+        tools:layout="@layout/fragment_game_win" >
+        <action
+            android:id="@+id/action_gameWinFragment_to_gameStartFragment"
+            app:destination="@id/gameStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameLoseFragment"
+        android:name="com.example.myapplication.GameLoseFragment"
+        android:label="fragment_game_lose"
+        tools:layout="@layout/fragment_game_lose" >
+        <action
+            android:id="@+id/action_gameLoseFragment_to_gameStartFragment"
+            app:destination="@id/gameStartFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameStartFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/gameStart" />
+
+    <Button
+        android:id="@+id/winButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToWin"
+        android:text="Win"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="170dp"
+        />
+
+    <Button
+        android:id="@+id/loseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToLose"
+        android:text="Lose"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="300dp"
+        />
+
+
+    <!-- letter buttons -->
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="350dp"
+        android:onClick="onLetterClick"
+        android:padding="3dp"
+        android:tag="q"
+        android:text="q"
+        android:textSize="@dimen/keyboardFontSize" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="350dp"
+        android:onClick="onLetterClick"
+        android:padding="3dp"
+        android:tag="w"
+        android:text="w"
+        android:textSize="@dimen/keyboardFontSize" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="350dp"
+        android:onClick="onLetterClick"
+        android:padding="3dp"
+        android:tag="e"
+        android:text="e"
+        android:textSize="@dimen/keyboardFontSize" />
+
+
+
+
+</FrameLayout>
