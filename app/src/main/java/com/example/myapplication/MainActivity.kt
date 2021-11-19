@@ -9,11 +9,14 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.RecyclerAdapter
+import com.example.myapplication.Model
+
 
 class MainActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
+    private var model: Model? = null
 
     //val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
     //val navController = navHostFragment.navController
@@ -24,9 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         layoutManager = LinearLayoutManager(this)
 
+        //Creating recycler val
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = layoutManager
+        //setting recycler to horizontal scroll
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        //Creating an arraylist of my data ( This is the hidden word, split up by each character )
         adapter = RecyclerAdapter()
         recyclerView.adapter = adapter
 
@@ -35,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         print("")
     }
-
+/*
     fun onLetterClick(view: View) {        //TODO("Create function to check if letter is in word. ")
         val word = (adapter as RecyclerAdapter).getPickedWord() //hidden word user needs to guess
         var letter = view.getTag() //letter pressed by the user.
@@ -45,12 +51,13 @@ class MainActivity : AppCompatActivity() {
             for (i in word.indices){ //Loop through the hidden word letter by letter.
                 var test = word[i]
                 print("")
+
             }
         }else {
             print("Something went wrong when picking a random word. The picked word: ${word} , returned null")
             super.recreate()
         }
-    }
+    }*/
 
 
     // Navigation

@@ -7,52 +7,31 @@ import android.widget.TextView
 import androidx.core.graphics.translationMatrix
 import androidx.recyclerview.widget.RecyclerView
 
+import com.example.myapplication.Model
+
+
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    private var words = arrayOf(
-        "word",
-        "bird",
-        "nerd",
-        "kurt",
-        "introvert"
-    )
-    private var pickedWord: String? = null
+    var words = Model().getHiddenWordList()
 
-    /*private val hiddenWord: Array<CharArray>? = null
+    //private var pickedWord: String? = null
 
-    fun pickWordAndSplit(){
-        val randomNumber = (0..words.size).random()
-        val pickedWord = words[randomNumber]
+    var pickedWord: List<String> = Model().pickAndSplit()
+    //val word = (adapter as RecyclerAdapter).getPickedWord()
 
 
-        print(pickedWord.toCharArray())
-        print("nothingXXXXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-
-    }*/
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.hidden_word, parent, false)
-
         return ViewHolder(v)
     }
 
     override fun getItemCount(): Int {
-        return 1
+        return pickedWord.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
-        val randomNumber = (0..words.size).random()
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.activeWord.text = pickedWord[position]
 
-        pickedWord = words[randomNumber]
-
-        holder.activeWord.text = pickedWord
-
-    }
-
-    fun getPickedWord(): String? {
-        return pickedWord
     }
 
 
