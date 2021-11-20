@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">s205363 Lykkehjulet</string>
+
 
     <!-- Fragment headers - The content should be changed at a later point. -->
     <string name = "gameStart">Game Start Fragment</string>
     <string name = "gameWin">Game Win Fragment</string>
     <string name = "gameLose">Game Lose Fragment</string>
-
+    <string name="win">Win</string>
+    <string name="lose">Lose</string>
 </resources>
