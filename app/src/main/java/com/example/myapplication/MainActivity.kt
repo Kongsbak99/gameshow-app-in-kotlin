@@ -42,7 +42,9 @@ class MainActivity : AppCompatActivity() {
                 pointView.text = "Points: ${totalPoints}"
                 spinable = true
             }else if(spinValue == "spin again"){
-                wheelText.text = "You missed your turn. Spin again."
+                wheelText.text = "You missed your turn and one life. Spin again."
+                lives -= 1
+                findViewById<TextView>(R.id.lives).text = "Lives: ${lives}"
                 spinable = true
             }else if (spinValue == "extra life"){
                 wheelText.text = "You gain an extra life!. Spin again!"
@@ -94,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         var pointView = findViewById<TextView>(R.id.points)
         totalPoints = totalPoints + 1000
         pointView.text = "Points: ${totalPoints}"
-        recyclerView!!.getChildAt(index).setBackgroundColor(Color.WHITE)/* TODO det skal gøres omvendt mht. farver*/
+        recyclerView!!.getChildAt(index).setBackgroundColor(Color.WHITE)
     }
     // Navigation
     fun goToLose(view: View) {
